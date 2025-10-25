@@ -28,8 +28,9 @@ Follow these steps to set up and run the project locally:
 git clone https://github.com/utshathapa/Sales-management-system.git
 cd Sales-management-system
 
-### 🔹 2. Backend Setup (Laravel)
-```bash
+---
+
+🔹 2. Backend Setup (Laravel)
 cd backend
 cp .env.sample .env
 composer install
@@ -37,5 +38,9 @@ php artisan key:generate
 php artisan migrate
 php artisan serve --port=8080
 
+🔹 3. Frontend Setup (React)
+cd ../frontends
+npm install
+npm run dev
 
 
