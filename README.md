@@ -49,5 +49,38 @@ Frontend: React, Vite, Axios, Tailwind CSS
 Backend: Laravel, PHP, MySQL
 Tools: Composer, Node.js, Git, VS Code, Postman
 
+## 📸 Screenshots
 
+### User Interface
+- **Landing Page**  
+  ![Landing Page](screenshots/landingpage.png)
+
+- **Home Page**  
+  ![Home Page](screenshots/homepage.png)
+
+- **Products**  
+  ![Products](screenshots/product_page.png)
+
+- **Shopping Cart**  
+  ![Cart](screenshots/cart.png)
+
+- **Login**  
+  ![Login](screenshots/login.png)
+
+- **Sign Up**  
+  ![Sign Up](screenshots/signup.png)
+
+### Admin Panel
+- **Dashboard**  
+  ![Dashboard](screenshots/dashboard.png)
+
+- **Customer Management**  
+  ![Customers](screenshots/customer.png)
+
+- **Add Product**  
+  ![Add Product](screenshots/addp.png)
+
+- **Order Management**  
+  ![Orders](screenshots/neworder.png)
+  ![Order Details](screenshots/view_new_order_details.png)
 
