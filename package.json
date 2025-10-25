@@ -1,0 +1,10 @@
+{
+  "name": "5thsem-project",
+  "private": true,
+  "scripts": {
+  "dev": "concurrently \"cd frontend && npm run dev\" \"cd backend\\public && php -S 127.0.0.1:8080\""
+},
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
