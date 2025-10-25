@@ -11,10 +11,22 @@ export default function NewOrders() {
     const [isLoading, setIsLoading] = useState(true);
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [showDetailsModal, setShowDetailsModal] = useState(false);
+    // New state for the notification message
+    const [notification, setNotification] = useState({ message: '', type: '' });
 
     useEffect(() => {
         fetchNewOrders();
     }, []);
+
+    // Effect to clear the notification after a few seconds
+    useEffect(() => {
+        if (notification.message) {
+            const timer = setTimeout(() => {
+                setNotification({ message: '', type: '' });
+            }, 3000); // Clears the message after 3 seconds
+            return () => clearTimeout(timer);
+        }
+    }, [notification]);
 
     const fetchNewOrders = async () => {
         setIsLoading(true);
@@ -32,7 +44,8 @@ export default function NewOrders() {
             setOrders(combinedOrders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
         } catch (error) {
             console.error('Failed to fetch new orders:', error);
-            alert('Error fetching new orders.');
+            // Replace alert with setNotification for fetch error
+            setNotification({ message: 'Error fetching new orders.', type: 'error' });
         } finally {
             setIsLoading(false);
         }
@@ -44,11 +57,14 @@ export default function NewOrders() {
                 status: newStatus
             });
             
-            alert(`Order status updated to ${newStatus}!`);
+            // Replace alert with setNotification for success
+            setNotification({ message: `Order status updated to ${newStatus}!`, type: 'success' });
+            
             fetchNewOrders(); // Refresh the list
         } catch (error) {
             console.error('Failed to update order status:', error);
-            alert('Failed to update order status');
+            // Replace alert with setNotification for update error
+            setNotification({ message: 'Failed to update order status.', type: 'error' });
         }
     };
 
@@ -87,6 +103,16 @@ export default function NewOrders() {
         <div className="admin-orders-container">
             <h2 className="admin-orders-title">New Orders ({orders.length})</h2>
             
+            {/* * START: Notification Message Box 
+              * Add this block to display the notification
+              */}
+            {notification.message && (
+                <div className={`notification-box ${notification.type}`}>
+                    {notification.message}
+                </div>
+            )}
+            {/* END: Notification Message Box */}
+
             <div className="orders-table-container">
                 <table className="orders-table">
                     <thead>

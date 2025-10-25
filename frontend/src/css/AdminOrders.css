@@ -266,3 +266,25 @@
     padding-top: 15px;
     margin-top: 20px;
 }
+/* CSS for the new notification box */
+.notification-box {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.notification-box.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green text */
+    border-color: #c3e6cb;
+}
+
+.notification-box.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red text */
+    border-color: #f5c6cb;
+}
