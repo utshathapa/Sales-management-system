@@ -23,24 +23,31 @@ This system helps manage sales, products, customers, and reports efficiently wit
 
 Follow these steps to set up and run the project locally:
 
+
 ### 🔹 1. Clone the Repository
 ```bash
 git clone https://github.com/utshathapa/Sales-management-system.git
 cd Sales-management-system
-
----
-
-🔹 2. Backend Setup (Laravel)
+```
+###🔹 2. Backend Setup (Laravel)
+```bash
 cd backend
 cp .env.sample .env
 composer install
 php artisan key:generate
 php artisan migrate
 php artisan serve --port=8080
-
-🔹 3. Frontend Setup (React)
+```
+###🔹 3. Frontend Setup (React)
+```bash
 cd ../frontends
 npm install
 npm run dev
+```
+### 🧠 Tech Stack
+Frontend: React, Vite, Axios, Tailwind CSS
+Backend: Laravel, PHP, MySQL
+Tools: Composer, Node.js, Git, VS Code, Postman
+
 
 
