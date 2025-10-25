@@ -1,0 +1,172 @@
+a:active,
+.navbar-logo a:active {
+    text-decoration: none !important; /* keep links clean */
+}
+
+/* ------------------------------------------------ */
+/* Navbar Base Styles                               */
+/* ------------------------------------------------ */
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ------------------------------------------------ */
+/* Logo                                            */
+/* ------------------------------------------------ */
+
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-logo a {
+    color: #c483f0;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------ */
+/* Links Menu                                      */
+/* ------------------------------------------------ */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, background 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.nav-link:hover {
+    color: #c483f0;
+    background-color: transparent;
+}
+
+/* Active NavLink */
+.nav-link.active {
+    color: #c483f0;
+    font-weight: 600;
+    background-color: transparent;
+}
+
+/* ------------------------------------------------ */
+/* Login / Logout Button                            */
+/* ------------------------------------------------ */
+
+.logout-btn,
+.login-btn {
+    background-color: #c483f0;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.logout-btn:hover,
+.login-btn:hover {
+    background-color: #9b5de5; /* darker purple on hover */
+    color: white;
+}
+
+.logout-btn:active,
+.login-btn:active {
+    background-color: #7a3fd1; /* even darker purple on click */
+    color: white;
+}
+
+/* ------------------------------------------------ */
+/* Icons                                           */
+/* ------------------------------------------------ */
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-wrapper {
+    position: relative;
+    cursor: pointer;
+    color: #c483f0;
+}
+
+.cart-link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+/* ------------------------------------------------ */
+/* Mobile/Responsive                               */
+/* ------------------------------------------------ */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #c483f0;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logout-btn,
+    .login-btn {
+        margin-top: 0.5rem;
+    }
+}

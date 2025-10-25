@@ -1,0 +1,250 @@
+.cart-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #faf7ff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(150, 100, 255, 0.08);
+  font-family: 'Poppins', sans-serif;
+  color: #4a3a80;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #b14cff;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #9c8ec4;
+  font-size: 1.1rem;
+  padding: 30px;
+}
+
+/* ==============================
+   CART ITEMS
+============================== */
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(150, 100, 255, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(150, 100, 255, 0.1);
+}
+
+.cart-image {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #f0eaff;
+}
+
+.cart-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.cart-details h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #4a3a80;
+  font-weight: 600;
+}
+
+.price {
+  color: #8b7dc7;
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+/* ==============================
+   QUANTITY CONTROLS
+============================== */
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.quantity-controls button {
+  background: #e8defc;
+  border: none;
+  color: #6a4fff;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 4px 10px;
+  transition: all 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background: #d8c7ff;
+}
+
+.quantity-controls span {
+  font-weight: 600;
+  color: #4a3a80;
+}
+
+/* ==============================
+   REMOVE BUTTON
+============================== */
+
+.remove-btn {
+  background: #ffe6f2;
+  border: none;
+  color: #ff4f7d;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: #ffccdc;
+  color: #ff1f5d;
+  transform: scale(1.05);
+}
+
+/* ==============================
+   CART SUMMARY
+============================== */
+
+.cart-summary {
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(150, 100, 255, 0.07);
+}
+
+.cart-summary h3 {
+  color: #b14cff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4a3a80;
+  margin: 10px 0;
+}
+
+/* ==============================
+   CART ACTION BUTTONS
+============================== */
+
+.cart-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+/* Base button styles */
+.checkout-btn,
+.buy-now-btn,
+.clear-btn {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+/* Checkout Button – Lavender-Pink gradient */
+.checkout-btn {
+  background: linear-gradient(135deg, #C93ACD, #A52DAA);
+  color: white;
+  box-shadow: 0 4px 12px rgba(201, 58, 205, 0.25);
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #A52DAA, #C93ACD);
+  box-shadow: 0 6px 15px rgba(201, 58, 205, 0.35);
+}
+
+/* Buy Now Button – Warm Pink-Gold gradient */
+.buy-now-btn {
+  background: linear-gradient(135deg, #FF6F91, #FFC75F);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 111, 145, 0.25);
+}
+
+.buy-now-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #FF4F7D, #FFB347);
+  box-shadow: 0 6px 15px rgba(255, 111, 145, 0.35);
+}
+
+/* Clear Button – Soft Lavender */
+.clear-btn {
+  background: #f8f3ff;
+  color: #C93ACD;
+  border: 1px solid #E0C7F3;
+  box-shadow: 0 3px 8px rgba(201, 58, 205, 0.08);
+}
+
+.clear-btn:hover {
+  transform: translateY(-2px);
+  background: #EBD4FF;
+  color: #A52DAA;
+  box-shadow: 0 5px 12px rgba(201, 58, 205, 0.15);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .cart-actions {
+    align-self: flex-end;
+  }
+
+  .cart-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

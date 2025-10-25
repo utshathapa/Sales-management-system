@@ -1,0 +1,79 @@
+.card {
+  width: 250px;
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  /* Option 1: Add a subtle border for definition */
+  /* border: 1px solid #E6E6FA; */ 
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  /* The shadow tint is now a softer lavender/lilac */
+  box-shadow: 0 10px 20px rgba(180, 150, 200, 0.3); 
+}
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.08);
+}
+
+.card-body {
+  padding: 18px 12px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 8px 0;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+  /* New Accent Color: Dusty Olive Green (#889E81) */
+  color: #889E81;
+}
+
+.card-price {
+  font-size: 0.95rem;
+  /* Option 2: Use a darker, grounding color for the price */
+  color: #52465D; 
+  margin-bottom: 14px;
+}
+
+.card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* New Button Gradient: Berry Pink (#D8BFD8 to #C0A0C0) */
+  background: linear-gradient(135deg, #D8BFD8, #C0A0C0); 
+  color: #333; /* Changed text color for better contrast on a lighter button */
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  /* New Button Shadow: Soft Lavender */
+  box-shadow: 0 4px 10px rgba(180, 150, 200, 0.3); 
+}
+
+.card-btn:hover {
+  /* Darker Hover Gradient */
+  background: linear-gradient(135deg, #C0A0C0, #A68AA6);
+  transform: translateY(-2px);
+  /* Darker Hover Shadow */
+  box-shadow: 0 6px 14px rgba(180, 150, 200, 0.45); 
+}
