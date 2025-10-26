@@ -36,12 +36,15 @@ cp .env.sample .env
 composer install
 php artisan key:generate
 php artisan migrate
-php artisan serve --port=8080
 ```
 ###🔹 3. Frontend Setup (React)
 ```bash
-cd ../frontends
+cd frontend
 npm install
+```
+###🔹 4. Run the project
+```bash
+cd  Sales-management-system
 npm run dev
 ```
 ### 🧠 Tech Stack
