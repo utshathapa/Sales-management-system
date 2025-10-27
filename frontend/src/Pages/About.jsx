@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, Heart, Users, CheckCircle } from 'lucide-react';
 import aboutimage from '../assets/aboutimage.png';
+ 
 
 // Define the component using the project's aesthetic: 
 // Background: #E6E6FA (Light Lavender)
@@ -227,6 +228,7 @@ const About = () => {
         </section>
 
       </div>
+       
     </div>
   );
 };

@@ -21,7 +21,8 @@ import OrderHistory from "./admin/OrderHistory";
 import Customer from "./admin/Customer";
 
 import { CartProvider } from "./components/Cartcomponent";
-import ProtectedRoute from "./components/Protectedroute"; // your auth logic
+import ProtectedRoute from "./components/Protectedroute";
+import Footer from "./components/Footer"; // ✅ Added Footer import
 import "./axiosConfig";
 
 // --- Layout wrappers ---
@@ -41,15 +42,22 @@ const AdminLayout = ({ children, isCollapsed, toggleSidebar }) => (
   </div>
 );
 
-const UserLayout = ({ children }) => (
-  <div>
-    <Navbar />
-    <div style={{ paddingTop: "20px" }}>{children}</div>
-  </div>
-);
+const UserLayout = ({ children }) => {
+  const location = useLocation();
+
+  // ✅ Show footer only on these routes
+  const showFooter = ["/home", "/products", "/about", "/contact"].includes(location.pathname);
+
+  return (
+    <div>
+      <Navbar />
+      <div style={{ paddingTop: "20px" }}>{children}</div>
+      {showFooter && <Footer />} {/* ✅ Footer only on selected pages */}
+    </div>
+  );
+};
 
 function AppContent() {
-  const location = useLocation();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import Card from "../components/card";
 import "../css/Product.css";
+ 
+
 import axios from "axios";
 
 // Imported images
@@ -100,7 +102,9 @@ export default function Products() {
         ) : (
           <p className="no-results">No products found for "{searchTerm}" 😢</p>
         )}
+       
       </div>
+       
     </div>
   );
 }

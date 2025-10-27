@@ -433,7 +433,7 @@ export default function MyAccount() {
           <ArrowLeft className="back-icon" />
           <span className="back-text">Back to home</span>
         </div>
-        <button
+        {/* <button
           className="signout-button"
           onClick={() => {
             localStorage.removeItem("user");
@@ -443,7 +443,7 @@ export default function MyAccount() {
         >
           <LogOut className="signout-icon" />
           Sign out
-        </button>
+        </button> */}
       </header>
 
       {/* Main Content */}
