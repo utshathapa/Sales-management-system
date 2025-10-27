@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Home.css";
-import Card from "../components/card"; // ✅ Import your Card component
+import Card from "../components/card"; 
+// ✅ Import your Card component
+import floral from '../assets/Floral.png';
+import lotus from '../assets/lotus.png';
+import purple from '../assets/purple.png';
+import resin from '../assets/resin.png';
 
 export default function Home() {
   const [user, setUser] = useState({ name: "" });
@@ -27,13 +32,13 @@ export default function Home() {
   const handleContactClick = () => {
     navigate("/contact");
   };
-
+  
   // Dummy product data for Popular Products section
   const products = [
-    { id: 1, name: "Resin Dish #1", price: 1200, image: "https://via.placeholder.com/150" },
-    { id: 2, name: "Resin Dish #2", price: 1200, image: "https://via.placeholder.com/150" },
-    { id: 3, name: "Resin Dish #3", price: 1200, image: "https://via.placeholder.com/150" },
-    { id: 4, name: "Resin Dish #4", price: 1200, image: "https://via.placeholder.com/150" },
+    { id: 103, name: "Floral Gold Flake Resin Thali", price: 1599.00, image: floral },
+    { id: 108, name: "Resin Incense Stick Holder (Lotus)", price: 399.00, image: lotus },
+    { id: 109, name: "Aura Purple Resin Thali", price: 1450.00, image: purple },
+    { id: 105, name: "Resin Kumkum/Haldi Katori (Set of 2)", price: 450.00, image: resin },
   ];
 
   return (
@@ -139,6 +144,14 @@ export default function Home() {
             />
           ))}
         </div>
+        {/* --- EXPLORE MORE BUTTON ADDED HERE --- */}
+        <button 
+          className="explore-more-button" 
+          onClick={handleExploreClick} // Links to /products
+        >
+          EXPLORE MORE PRODUCTS
+        </button>
+        {/* -------------------------------------- */}
       </section>
 
       {/* CONTACT SECTION */}

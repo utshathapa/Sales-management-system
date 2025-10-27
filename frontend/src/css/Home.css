@@ -581,3 +581,39 @@
 .logout-button-footer:hover {
     background-color: var(--color-primary);
 }
+.explore-more-button {
+    /* Layout */
+    display: block; 
+    width: 300px; 
+    max-width: 80%; 
+    margin: 40px auto 60px auto; 
+    padding: 15px 30px;
+    
+    /* Appearance */
+    background-color: var(--color-primary); 
+    color: white;
+    border: none;
+    border-radius: 9999px; /* <--- UPDATED: Makes it fully pill-shaped (like the explore-button) */
+    
+    /* Text */
+    font-family: 'Cormorant Garamond', serif; /* Ensure font consistency */
+    font-size: 1rem;
+    font-weight: 500; /* Adjusted to match other buttons */
+    text-transform: uppercase;
+    letter-spacing: 0.1em; /* Increased letter-spacing for elegance */
+    
+    /* Interactivity */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+}
+
+.explore-more-button:hover {
+    background-color: #A36EC9; /* Lighter primary hover, consistent with other button hovers */
+    transform: scale(1.01); /* Subtle scale effect instead of vertical movement */
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15); 
+}
+
+.explore-more-button:active {
+    transform: scale(0.99); /* Press-down effect */
+}
