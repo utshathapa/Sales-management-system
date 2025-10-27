@@ -15,10 +15,11 @@ import Admindashboard from "./admin/dashboard";
 import Product from "./admin/product";
 import Inventory from "./admin/Inventory";
 import Sidebar from "./admin/Sidebar";
-import NewOrders from "./admin/NewOrders";        // <-- IMPORT NEW ORDERS
-import OrderHistory from "./admin/OrderHistory";  // <-- IMPORT ORDER HISTORY
-import Customer from "./admin/Customer";  // Add this line
+import NewOrders from "./admin/NewOrders";
+import OrderHistory from "./admin/OrderHistory";
+import Customer from "./admin/Customer";
 import "./axiosConfig";
+import ProtectedRoute from "./components/Protectedroute";
 
 // --- Layout wrappers ---
 const AdminLayout = ({ children, isCollapsed, toggleSidebar }) => (
@@ -48,49 +49,49 @@ function AppContent() {
   const location = useLocation();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  // const isAdminPage = location.pathname.startsWith("/admin"); // Not used but useful for context
-
   return (
     <Routes>
-      {/* --- User routes --- */}
-      <Route
-        path="/"
-        element={<UserLayout><LandingPage /></UserLayout>}
-      />
-      <Route
-        path="/signup"
-        element={<UserLayout><SignUp /></UserLayout>}
-      />
-      <Route
-        path="/login"
-        element={<UserLayout><Login /></UserLayout>}
-      />
+      {/* --- Public/User routes --- */}
+      <Route path="/" element={<UserLayout><LandingPage /></UserLayout>} />
+      <Route path="/signup" element={<UserLayout><SignUp /></UserLayout>} />
+      <Route path="/login" element={<UserLayout><Login /></UserLayout>} />
+      <Route path="/products" element={<UserLayout><Products /></UserLayout>} />
+      <Route path="/contact" element={<UserLayout><Contact /></UserLayout>} />
+      <Route path="/about" element={<UserLayout><About /></UserLayout>} />
+
+      {/* --- Protected routes (logged-in users only) --- */}
       <Route
         path="/home"
-        element={<UserLayout><Home /></UserLayout>}
-      />
-      <Route
-        path="/products"
-        element={<UserLayout><Products /></UserLayout>}
-      />
-      <Route
-        path="/contact"
-        element={<UserLayout><Contact /></UserLayout>}
-      />
-      <Route
-        path="/about"
-        element={<UserLayout><About /></UserLayout>}
-      />
-      <Route
-        path="/cart"
-        element={<UserLayout><CartPage /></UserLayout>}
+        element={
+          <UserLayout>
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          </UserLayout>
+        }
       />
       <Route
         path="/account"
-        element={<UserLayout><Account /></UserLayout>}
+        element={
+          <UserLayout>
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          </UserLayout>
+        }
+      />
+      <Route
+        path="/cart"
+        element={
+          <UserLayout>
+            <ProtectedRoute>
+              <CartPage />
+            </ProtectedRoute>
+          </UserLayout>
+        }
       />
 
-      {/* --------------------------- --- Admin routes --- --------------------------- */}
+      {/* --------------------------- Admin routes --------------------------- */}
       <Route
         path="/admin/dashboard"
         element={
@@ -115,8 +116,6 @@ function AppContent() {
           </AdminLayout>
         }
       />
-      
-      {/* --- NEW ORDER ROUTES --- */}
       <Route
         path="/admin/new-orders"
         element={
@@ -133,17 +132,14 @@ function AppContent() {
           </AdminLayout>
         }
       />
-      {/* --- Customer route --- */}
-<Route
-  path="/admin/customer"
-  element={
-    <AdminLayout isCollapsed={isCollapsed} toggleSidebar={() => setIsCollapsed(!isCollapsed)}>
-      <Customer />
-    </AdminLayout>
-  }
-/>
-      
-      {/* ---------------------------------------------------------------------------- */}
+      <Route
+        path="/admin/customer"
+        element={
+          <AdminLayout isCollapsed={isCollapsed} toggleSidebar={() => setIsCollapsed(!isCollapsed)}>
+            <Customer />
+          </AdminLayout>
+        }
+      />
     </Routes>
   );
 }
