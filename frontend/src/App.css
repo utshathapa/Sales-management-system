@@ -16,19 +16,29 @@ body {
   padding: 0;
 }
 
-/* ENSURE HERO OR NEXT SECTION TOUCHES NAVBAR */
-.hero-bg-shreemcraft {
-  margin-top: 0;
-  padding-top: 0;
+:root[data-theme="light"] {
+  --color-primary: #C483F0;
+  --color-bg: #f8f7ff;
+  --color-text: #1e293b;
+  --color-gray-text: #6b7280;
+  --color-dark-hover: #7e50aa;
+  --color-card-bg: #ffffff;
+  --color-footer-bg: #1e293b;
 }
 
-#root,
-div[style*="padding-top"],
-.main-content,
-.page-wrapper {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+:root[data-theme="dark"] {
+  --color-primary: #C483F0;
+  --color-bg: #121212;
+  --color-text: #f5f5f5;
+  --color-gray-text: #9ca3af;
+  --color-dark-hover: #a36ec9;
+  --color-card-bg: #1a1a1a;
+  --color-footer-bg: #1e1e1e;
 }
-body *[style*="padding-top"] {
-  padding-top: 0 !important;
+
+/* Optional global transitions */
+body, .shreemcraft-container, .section, .service-card, .gift-banner-container, .contact-circle, .product-card, .footer {
+  transition: all 0.3s ease;
 }
+
+

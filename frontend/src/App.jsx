@@ -22,8 +22,9 @@ import Customer from "./admin/Customer";
 
 import { CartProvider } from "./components/Cartcomponent";
 import ProtectedRoute from "./components/Protectedroute";
-import Footer from "./components/Footer"; // ✅ Added Footer import
+import Footer from "./components/Footer";
 import "./axiosConfig";
+import { ThemeProvider } from "./hooks/useTheme"; // ✅ your theme provider
 
 // --- Layout wrappers ---
 const AdminLayout = ({ children, isCollapsed, toggleSidebar }) => (
@@ -141,11 +142,13 @@ function AppContent() {
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <AppContent />
-      </Router>
-    </CartProvider>
+    <ThemeProvider> {/* ✅ Wrap your entire app here */}
+      <CartProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </CartProvider>
+    </ThemeProvider>
   );
 }
 

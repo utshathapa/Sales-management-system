@@ -158,7 +158,43 @@ const About = () => {
     /* ... existing rules ... */
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container without stretching */
+    object-fit: cover;
+     /* Ensures the image covers the container without stretching */
+}
+     [data-theme="dark"] .about-container {
+    background-color: #121212; /* dark background */
+}
+
+[data-theme="dark"] .main-card {
+    background-color: #1e1e1e; /* card dark bg */
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.7), 0 10px 10px -5px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .main-heading,
+[data-theme="dark"] .text-main,
+[data-theme="dark"] .value-title,
+[data-theme="dark"] .value-description {
+    color: #f0f0f0; /* light text for dark bg */
+}
+
+[data-theme="dark"] .sub-heading,
+[data-theme="dark"] .text-accent,
+[data-theme="dark"] .value-icon {
+    color: #ff77aa; /* accent color for dark mode */
+}
+
+[data-theme="dark"] .value-card {
+    background-color: #2a2a2a; /* dark card */
+    border: 1px solid #444; /* subtle border */
+}
+
+[data-theme="dark"] .image-placeholder {
+    background-color: #333; /* darker placeholder */
+    color: #f0f0f0;
+}
+
+[data-theme="dark"] .history-image {
+    filter: brightness(0.85); /* slightly dim images */
 }
       `}</style>
 

@@ -94,3 +94,76 @@
   margin-top: 60px;
 }
 
+[data-theme="dark"] {
+    --color-bg: #121212;
+    --color-text: #f5f5f5;
+    --color-gray-text: #9ca3af;
+    --color-card-bg: #1a1a1a;
+    --color-border: #444;
+    --color-primary: #A36EC9;
+}
+
+/* Page background */
+[data-theme="dark"] .products-page-wrapper {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Heading */
+[data-theme="dark"] .products-heading {
+    color: var(--color-primary);
+}
+
+/* Search bar */
+[data-theme="dark"] .search-bar {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .search-bar input {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .search-icon {
+    color: var(--color-gray-text);
+}
+
+/* Card list & individual cards */
+[data-theme="dark"] .card-list {
+    /* No change needed, cards have own bg override */
+}
+
+[data-theme="dark"] .product-card {
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .add-to-cart-button {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+[data-theme="dark"] .add-to-cart-button:hover {
+    background-color: var(--color-border);
+}
+
+/* No results / loading text */
+[data-theme="dark"] .no-results,
+[data-theme="dark"] .loading-text {
+    color: var(--color-gray-text);
+}
+[data-theme="dark"] .search-bar {
+    background-color: var(--color-card-bg); /* dark card bg instead of white */
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+}
+
+[data-theme="dark"] .search-bar input {
+    background-color: transparent; /* no white inside input */
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .search-bar:focus-within {
+    box-shadow: 0 0 0 3px rgba(163, 110, 201, 0.3); /* subtle purple focus */
+}

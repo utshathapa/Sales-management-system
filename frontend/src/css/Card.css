@@ -77,3 +77,39 @@
   /* Darker Hover Shadow */
   box-shadow: 0 6px 14px rgba(180, 150, 200, 0.45); 
 }
+[data-theme="dark"] .card {
+    background-color: #1e1e1e; /* dark background */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .card-title {
+    color: #f0f0f0; /* light text for dark bg */
+}
+
+[data-theme="dark"] .card:hover .card-title {
+    color: #889E81; /* same hover accent */
+}
+
+[data-theme="dark"] .card-price {
+    color: #d3d3d3; /* softer price color */
+}
+
+[data-theme="dark"] .card-btn {
+    background: linear-gradient(135deg, #3c3c3c, #555555); /* dark button */
+    color: #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .card-btn:hover {
+    background: linear-gradient(135deg, #555555, #3c3c3c);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+}
+
+/* Warning and Cart messages */
+[data-theme="dark"] .card-body > div {
+    color: #f0f0f0;
+}
