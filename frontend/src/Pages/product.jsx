@@ -22,12 +22,12 @@ const DUMMY_PRODUCTS = [
   { id: 102, name: "Geode Crystal Resin Thali Set", price: 2100.00, image: geode },
   { id: 103, name: "Floral Gold Flake Resin Thali", price: 1599.00, image: floral },
   { id: 104, name: "Metallic Gold Leaf Thali", price: 1390.00, image: metallic },
-  { id: 105, name: "Resin Kumkum/Haldi Katori (Set of 2)", price: 450.00, image: resin }, // linked to resin.png
-  { id: 106, name: "Mother of Pearl Resin Diya Base", price: 680.00, image: mother }, // linked to mother.png
-  { id: 107, name: "Customized Photo Resin Frame", price: 950.00, image: frame }, // linked to frame.png
-  { id: 108, name: "Resin Incense Stick Holder (Lotus)", price: 399.00, image: lotus }, // linked to lotus.png
-  { id: 109, name: "Aura Purple Resin Thali", price: 1450.00, image: purple }, // linked to purple.png
-  { id: 110, name: "Mirror-Finish Resin Thali", price: 1899.00, image: mirror }, // linked to mirror.png
+  { id: 105, name: "Resin Kumkum/Haldi Katori (Set of 2)", price: 450.00, image: resin },
+  { id: 106, name: "Mother of Pearl Resin Diya Base", price: 680.00, image: mother },
+  { id: 107, name: "Customized Photo Resin Frame", price: 950.00, image: frame },
+  { id: 108, name: "Resin Incense Stick Holder (Lotus)", price: 399.00, image: lotus },
+  { id: 109, name: "Aura Purple Resin Thali", price: 1450.00, image: purple },
+  { id: 110, name: "Mirror-Finish Resin Thali", price: 1899.00, image: mirror },
 ];
 
 export default function Products() {
@@ -49,7 +49,6 @@ export default function Products() {
         setIsLoading(false);
       }
     };
-
     fetchAndCombineProducts();
   }, []);
 
@@ -57,22 +56,21 @@ export default function Products() {
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-const getImageUrl = (product) => {
-    // Updated this check to include ALL imported variables
-    if ([ocean, geode, floral, metallic, mother, mirror, lotus, frame, resin, purple].includes(product.image)) return product.image; 
-    if (typeof product.image === 'string' && product.image.startsWith('dummy-')) return `/${product.image}`;
-    if (typeof product.image === 'string') return `http://127.0.0.1:8080/storage/${product.image}`;
+  const getImageUrl = (product) => {
+    if ([ocean, geode, floral, metallic, mother, mirror, lotus, frame, resin, purple].includes(product.image)) 
+      return product.image; 
+    if (typeof product.image === 'string' && product.image.startsWith('dummy-')) 
+      return `/${product.image}`;
+    if (typeof product.image === 'string') 
+      return `http://127.0.0.1:8080/storage/${product.image}`;
     return '';
   };
 
-  // Debug: Check what data we're getting
-  console.log("First product:", products[0]);
-
-  if (isLoading) return <p>Loading products...</p>;
+  if (isLoading) return <p className="loading-text">Loading products...</p>;
 
   return (
     <div className="products-page-wrapper">
-      <h2 className="products-heading">Our Products</h2>
+      <h2 className="products-heading">Our Exquisite Collection✨</h2>
 
       <div className="search-bar-container">
         <div className="search-bar">
@@ -88,13 +86,15 @@ const getImageUrl = (product) => {
 
       <div className="card-list">
         {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
+          filteredProducts.map((product, idx) => (
             <Card
               key={product.id}
               id={product.id}
               title={product.name}
               price={product.price}
               image={getImageUrl(product)}
+              className="animate-card"
+              style={{ animationDelay: `${idx * 0.08}s` }} // staggered animation
             />
           ))
         ) : (

@@ -21,6 +21,7 @@ import Customer from "./admin/Customer";
 import "./axiosConfig";
 import ProtectedRoute from "./components/Protectedroute";
 
+
 // --- Layout wrappers ---
 const AdminLayout = ({ children, isCollapsed, toggleSidebar }) => (
   <div style={{ display: "flex", minHeight: "100vh" }}>

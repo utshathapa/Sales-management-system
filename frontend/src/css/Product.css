@@ -1,34 +1,31 @@
-/* Product.css - Revised for Lavender Theme */
-
-/* 🎨 Lavender Color Palette Reference: */
-/* --primary-lavender: #A9A0D0; (Soft Lilac - Your main button/accent color) */
-/* --secondary-cream: #FDFCEF; (Soft Cream background) */
-/* --text-dark: #333333; */
-/* --text-light: #777788; (Soft Grayish-Purple for secondary text) */
-
-/* ## Global Page Styling */
 .products-page-wrapper {
   padding: 40px 20px;
-  /* Use a very light, almost white lavender/cream for the background */
-  background-color:  #E6E6FA; 
+  background-color: #E6E6FA;
   min-height: calc(100vh - 80px);
   text-align: center;
 }
 
-/* ## Typography */
 .products-heading {
-  font-size: 2.5rem;
-  color: var(--text-dark,  #4B0082);
+  font-size: 2.2rem; /* slightly bigger */
+  color: #6B3FA0; /* soft purple */
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* keeps spacing compact */
+  display: inline-block;
+  animation: subtleBounce 2s ease-in-out infinite alternate;
 }
 
-/* ## Search Bar */
+@keyframes subtleBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); } /* subtle bounce */
+  100% { transform: translateY(0); }
+}
+
+/* Search Bar */
 .search-bar-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .search-bar {
@@ -36,17 +33,16 @@
   align-items: center;
   width: 100%;
   max-width: 400px;
-  background-color: #FFFFFF;
-  border: 1px solid #E5E5F0; /* Very light, cool border */
+  background-color: #fff;
+  border: 1px solid #D8BFD8;
   border-radius: 50px;
   padding: 10px 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03); /* Extremely soft shadow */
+  box-shadow: 0 4px 10px rgba(180, 150, 200, 0.2);
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .search-bar:focus-within {
-  /* Soft lavender focus ring */
-  box-shadow: 0 0 0 3px rgba(169, 160, 208, 0.4); 
+  box-shadow: 0 0 0 3px rgba(180, 150, 200, 0.3);
 }
 
 .search-bar input {
@@ -55,16 +51,16 @@
   font-size: 1rem;
   width: 100%;
   padding-left: 10px;
-  color: var(--text-dark, #333);
+  color: #333;
 }
 
 .search-icon {
-  color: var(--text-light, #777788);
+  color: #777788;
   width: 22px;
   height: 22px;
 }
 
-/* ## Product List */
+/* Card Grid */
 .card-list {
   display: flex;
   justify-content: center;
@@ -74,56 +70,26 @@
   margin: 0 auto;
 }
 
-/* ## No Results Message */
+/* No results text */
 .no-results {
-  color: var(--text-light, #777788);
+  color: #777788;
   font-size: 1.2rem;
   margin-top: 30px;
 }
 
-/* ---------------------------------------------------- */
-/* ⚠️ Card Component Styles (Crucial for the theme) */
-/* ---------------------------------------------------- */
-
-/* Assuming your Card component uses a class like 'product-card' */
-.product-card {
-  width: 300px;
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding-bottom: 15px;
+/* Card Animation */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  /* Hover shadow with a subtle lavender tint */
-  box-shadow: 0 10px 20px rgba(169, 160, 208, 0.15); 
+.animate-card {
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-/* ... other product image/info styles ... */
-
-.product-price {
-  font-size: 1.1rem;
-  color: var(--primary-lavender, #A9A0D0); /* Use Lavender for price accent */
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-/* Add to Cart button style */
-.add-to-cart-btn {
-    background-color: var(--primary-lavender, #A9A0D0); 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #9088C0; /* A slightly darker lavender on hover */
+/* Loading */
+.loading-text {
+  font-size: 1.3rem;
+  color: #6B3FA0;
+  margin-top: 60px;
 }
