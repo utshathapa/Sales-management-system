@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Home.css";
 import Card from "../components/card"; 
+ 
 // ✅ Import your Card component
 import floral from '../assets/Floral.png';
 import lotus from '../assets/lotus.png';
@@ -175,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="footer-content-wrapper">
           <div className="footer-grid">
             <div className="footer-col footer-col-logo">
@@ -216,7 +217,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
+      
     </div>
   );
 }
