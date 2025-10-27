@@ -1,44 +1,34 @@
 import React, { useState } from "react";
 import "../css/CheckoutModal.css";
+import { useTheme } from "../hooks/useTheme"; // assuming you have a global theme hook
 
 export default function CheckoutModal({ isOpen, onClose, onConfirm, totalAmount }) {
   const [shippingAddress, setShippingAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({});
+  const { theme } = useTheme(); // 'light' or 'dark'
 
   const validate = () => {
     const newErrors = {};
-    
-    if (!shippingAddress.trim()) {
-      newErrors.shippingAddress = "Shipping address is required";
-    }
-    
-    if (!phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(phone.replace(/\D/g, ''))) {
-      newErrors.phone = "Please enter a valid 10-digit phone number";
-    }
-    
+    if (!shippingAddress.trim()) newErrors.shippingAddress = "Shipping address is required";
+    if (!phone.trim()) newErrors.phone = "Phone number is required";
+    else if (!/^\d{10}$/.test(phone.replace(/\D/g, ''))) newErrors.phone = "Please enter a valid 10-digit phone number";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     if (validate()) {
-      onConfirm({
-        shipping_address: shippingAddress,
-        phone: phone
-      });
+      onConfirm({ shipping_address: shippingAddress, phone });
     }
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className={`modal-overlay ${theme}`} onClick={onClose}>
+      <div className={`modal-content ${theme}`} onClick={(e) => e.stopPropagation()}>
         <h2>Checkout</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -50,9 +40,7 @@ export default function CheckoutModal({ isOpen, onClose, onConfirm, totalAmount 
               rows="4"
               className={errors.shippingAddress ? "error" : ""}
             />
-            {errors.shippingAddress && (
-              <span className="error-message">{errors.shippingAddress}</span>
-            )}
+            {errors.shippingAddress && <span className="error-message">{errors.shippingAddress}</span>}
           </div>
 
           <div className="form-group">
@@ -64,9 +52,7 @@ export default function CheckoutModal({ isOpen, onClose, onConfirm, totalAmount 
               placeholder="9812345678"
               className={errors.phone ? "error" : ""}
             />
-            {errors.phone && (
-              <span className="error-message">{errors.phone}</span>
-            )}
+            {errors.phone && <span className="error-message">{errors.phone}</span>}
           </div>
 
           <div className="order-summary">
@@ -75,12 +61,8 @@ export default function CheckoutModal({ isOpen, onClose, onConfirm, totalAmount 
           </div>
 
           <div className="modal-buttons">
-            <button type="submit" className="confirm-btn">
-              Place Order
-            </button>
-            <button type="button" className="cancel-btn" onClick={onClose}>
-              Cancel
-            </button>
+            <button type="submit" className="confirm-btn">Place Order</button>
+            <button type="button" className="cancel-btn" onClick={onClose}>Cancel</button>
           </div>
         </form>
       </div>

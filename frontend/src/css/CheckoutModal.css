@@ -116,3 +116,53 @@
 .cancel-btn:hover {
   background-color: #5a6268;
 }
+.modal-overlay.dark {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal content */
+.modal-content.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+/* Labels and text */
+.modal-content.dark label {
+  color: #f1f1f1;
+}
+
+/* Inputs in dark mode */
+.modal-content.dark input,
+.modal-content.dark textarea {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.modal-content.dark input:focus,
+.modal-content.dark textarea:focus {
+  border-color: #28a745;
+}
+
+/* Order summary */
+.order-summary.dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* Error messages stay same or brighter red */
+.modal-content.dark .error-message {
+  color: #ff6b6b;
+}
+
+/* Buttons */
+.modal-content.dark .confirm-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.modal-content.dark .cancel-btn {
+  background-color: #6c757d;
+  color: #fff;
+}

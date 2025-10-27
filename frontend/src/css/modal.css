@@ -33,3 +33,24 @@
 .modal-close-btn:hover {
   background: #5a40a7;
 }
+
+.modal-overlay.dark {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal content */
+.modal-content.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+  border: 1px solid #333;
+}
+
+/* Close button in dark mode */
+.modal-content.dark .modal-close-btn {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.modal-content.dark .modal-close-btn:hover {
+  background-color: #5a6268;
+}
