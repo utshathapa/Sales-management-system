@@ -65,7 +65,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
+     {/* SERVICES SECTION - BUTTONS UPDATED HERE */}
       <section className="section services-section">
         <h3 className="section-subtitle">WHAT WE OFFER</h3>
         <h2 className="section-title">Designed with Passion, Crafted with Care</h2>
@@ -78,7 +78,9 @@ export default function Home() {
               Get your handmade goods delivered quickly and reliably to any
               location worldwide.
             </p>
-            <button className="service-button">DISCOVER</button>
+            <button className="service-button" onClick={handleExploreClick}>
+              DISCOVER
+            </button>
           </div>
 
           <div className="service-card">
@@ -88,7 +90,9 @@ export default function Home() {
               Personalize your products with custom engravings and luxurious
               gift wrapping options.
             </p>
-            <button className="service-button">DISCOVER</button>
+            <button className="service-button" onClick={handleExploreClick}>
+              DISCOVER
+            </button>
           </div>
 
           <div className="service-card">
@@ -98,7 +102,9 @@ export default function Home() {
               If you are near our main studio, you can arrange a complimentary
               local pick-up to save on shipping.
             </p>
-            <button className="service-button">DISCOVER</button>
+            <button className="service-button" onClick={handleExploreClick}>
+              DISCOVER
+            </button>
           </div>
         </div>
       </section>
