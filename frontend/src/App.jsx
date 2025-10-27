@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
 import Navbar from "./components/navbar";
 import LandingPage from "./Pages/LandingPage";
 import SignUp from "./Pages/signup";
@@ -7,10 +8,10 @@ import Login from "./Pages/login";
 import Home from "./components/Home";
 import Contact from "./Pages/contact";
 import About from "./Pages/About";
-import { CartProvider } from "./components/Cartcomponent";
 import CartPage from "./Pages/CartPage";
 import Products from "./Pages/product";
 import Account from "./Pages/account";
+
 import Admindashboard from "./admin/dashboard";
 import Product from "./admin/product";
 import Inventory from "./admin/Inventory";
@@ -18,9 +19,10 @@ import Sidebar from "./admin/Sidebar";
 import NewOrders from "./admin/NewOrders";
 import OrderHistory from "./admin/OrderHistory";
 import Customer from "./admin/Customer";
-import "./axiosConfig";
-import ProtectedRoute from "./components/Protectedroute";
 
+import { CartProvider } from "./components/Cartcomponent";
+import ProtectedRoute from "./components/Protectedroute"; // your auth logic
+import "./axiosConfig";
 
 // --- Layout wrappers ---
 const AdminLayout = ({ children, isCollapsed, toggleSidebar }) => (
@@ -60,7 +62,7 @@ function AppContent() {
       <Route path="/contact" element={<UserLayout><Contact /></UserLayout>} />
       <Route path="/about" element={<UserLayout><About /></UserLayout>} />
 
-      {/* --- Protected routes (logged-in users only) --- */}
+      {/* --- Protected Home route (logged-in users only) --- */}
       <Route
         path="/home"
         element={
@@ -71,28 +73,12 @@ function AppContent() {
           </UserLayout>
         }
       />
-      <Route
-        path="/account"
-        element={
-          <UserLayout>
-            <ProtectedRoute>
-              <Account />
-            </ProtectedRoute>
-          </UserLayout>
-        }
-      />
-      <Route
-        path="/cart"
-        element={
-          <UserLayout>
-            <ProtectedRoute>
-              <CartPage />
-            </ProtectedRoute>
-          </UserLayout>
-        }
-      />
 
-      {/* --------------------------- Admin routes --------------------------- */}
+      {/* --- Cart and Account accessible to all --- */}
+      <Route path="/account" element={<UserLayout><Account /></UserLayout>} />
+      <Route path="/cart" element={<UserLayout><CartPage /></UserLayout>} />
+
+      {/* --- Admin routes --- */}
       <Route
         path="/admin/dashboard"
         element={
