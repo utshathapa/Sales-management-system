@@ -156,3 +156,47 @@
   pointer-events: none;
   font-size: 1em;
 }
+.dark-mode.signup-page-wrapper {
+    background-color: #000; /* full black page */
+}
+
+.dark-mode .signup-card {
+    background-color: #121212; /* slightly lighter card */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    color: #e0e0e0;
+}
+
+.dark-mode .signup-card h2 {
+    color: #f5f5f5;
+}
+
+.dark-mode .signup-card input,
+.dark-mode .signup-card select,
+.dark-mode .signup-card textarea {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+.dark-mode .signup-card input:focus,
+.dark-mode .signup-card select:focus,
+.dark-mode .signup-card textarea:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 2px rgba(200,200,200,0.2);
+}
+
+.dark-mode .signup-card button[type="submit"] {
+    filter: brightness(0.85);
+}
+
+.dark-mode .message.error {
+    color: #ff6b6b;
+}
+
+.dark-mode .message.success {
+    color: #4cd964;
+}
+
+.dark-mode .date-input-wrapper .placeholder {
+    color: #aaa;
+}

@@ -114,3 +114,41 @@
   border-top-right-radius: 20px; /* Top-right corner rounded */
   border-bottom-right-radius: 20px; /* Bottom-right corner rounded */
 }
+.dark-mode.landing-page-wrapper {
+    background-color: #000; /* Full black page */
+}
+
+.dark-mode .landing-container-split {
+    background-color: #121212; /* Dark content panel background */
+}
+
+.dark-mode .content-panel h1 {
+    color: #e0e0e0; /* Light text for dark bg */
+}
+
+.dark-mode .content-panel p {
+    color: #ccc;
+}
+
+.dark-mode .landing-buttons button:first-child {
+    background-color: #C71585;
+    color: #fff;
+}
+
+.dark-mode .landing-buttons button:first-child:hover {
+    background-color: #A0522D;
+}
+
+.dark-mode .landing-buttons button:last-child {
+    background-color: transparent;
+    color: #C71585;
+}
+
+.dark-mode .landing-buttons button:last-child:hover {
+    background-color: #C71585;
+    color: #fff;
+}
+
+.dark-mode .image-panel {
+    background-color: #121212; /* makes image contrast nicely in dark mode */
+}
