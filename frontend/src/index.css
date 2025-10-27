@@ -1,0 +1,35 @@
+/* Reset all margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Remove any margin from the root container */
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure navbar has no space */
+.navbar {
+    margin: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove top margin from first element after navbar */
+.shreemcraft-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.hero-bg-shreemcraft {
+    margin-top: 0 !important;
+}
