@@ -1,5 +1,4 @@
-a:active,
-.navbar-logo a:active {
+a:active, .navbar-logo a:active {
     text-decoration: none !important; /* keep links clean */
 }
 
@@ -13,6 +12,13 @@ a:active,
     position: sticky;
     top: 0;
     z-index: 50;
+    margin: 0; /* Remove all margins */
+}
+
+/* Remove padding from element after navbar */
+.navbar + * {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
 }
 
 .navbar-container {
@@ -74,8 +80,7 @@ a:active,
 /* Login / Logout Button                            */
 /* ------------------------------------------------ */
 
-.logout-btn,
-.login-btn {
+.logout-btn, .login-btn {
     background-color: #c483f0;
     color: white;
     border: none;
@@ -87,14 +92,12 @@ a:active,
     text-decoration: none;
 }
 
-.logout-btn:hover,
-.login-btn:hover {
+.logout-btn:hover, .login-btn:hover {
     background-color: #9b5de5; /* darker purple on hover */
     color: white;
 }
 
-.logout-btn:active,
-.login-btn:active {
+.logout-btn:active, .login-btn:active {
     background-color: #7a3fd1; /* even darker purple on click */
     color: white;
 }
@@ -156,15 +159,15 @@ a:active,
         padding: 1rem 0;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-
+    
     .navbar-links.active {
         display: flex;
     }
-
+    
     .menu-toggle {
         display: block;
     }
-
+    
     .logout-btn,
     .login-btn {
         margin-top: 0.5rem;
