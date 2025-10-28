@@ -87,7 +87,7 @@ export default function CartPage() {
       return (
         <div style={{ textAlign: 'center', padding: '40px' }}>
           <p className="empty-cart">Your cart is empty 😢</p>
-          <button onClick={() => navigate('/products')}>Browse Products</button>
+          <button className="empty-cart-button" onClick={() => navigate('/products')}>Browse Products</button>
         </div>
       );
     }

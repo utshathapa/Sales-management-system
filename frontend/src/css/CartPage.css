@@ -294,3 +294,39 @@
 .dark-mode .login-btn {
   filter: brightness(0.8);
 }
+.empty-cart-button {
+    /* Color: Softer Lavender/Purple */
+    background-color: #e0b0ff; /* Light Lavender base */
+    background-image: linear-gradient(135deg, #cc99ff 0%, #a4508b 100%); /* Soft gradient */
+    color: white; /* White text for contrast */
+    
+    /* Size: Slightly smaller padding */
+    padding: 10px 22px; 
+    
+    /* Typography */
+    font-size: 15px; /* Slightly smaller font */
+    font-weight: 600;
+    
+    /* Shape and Effects */
+    border: none;
+    border-radius: 20px; /* More rounded, pill-like shape */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(164, 80, 139, 0.2); /* Softer shadow */
+    display: inline-block;
+}
+
+/* Hover State */
+.empty-cart-button:hover {
+    /* Slightly darker gradient and slight lift */
+    background-image: linear-gradient(135deg, #a4508b 0%, #cc99ff 100%);
+    box-shadow: 0 4px 8px rgba(164, 80, 139, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Active/Click State */
+.empty-cart-button:active {
+    /* Click effect */
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(164, 80, 139, 0.2);
+}
