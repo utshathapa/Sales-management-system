@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparkles, Heart, Users, CheckCircle, Shield, TrendingUp, Headphones } from 'lucide-react';
 import aboutimage from '../assets/aboutimage.png';
 
+
 const About = () => {
   const values = [
     { 
