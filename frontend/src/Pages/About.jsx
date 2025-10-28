@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, Heart, Users, CheckCircle, Shield, TrendingUp, Headphones } from 'lucide-react';
 import aboutimage from '../assets/aboutimage.png';
+import bg from '../assets/bg.jpg';
 
 const About = () => {
   const values = [
@@ -81,8 +82,8 @@ const About = () => {
 
         /* Hero Section */
         .hero-section {
-          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                      url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1200') center/cover;
+          background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.62)),
+                      url(${bg}) center/cover;
           min-height: 400px;
           display: flex;
           align-items: center;
@@ -93,7 +94,7 @@ const About = () => {
         .hero-title {
           font-size: 3rem;
           font-weight: 700;
-          color: white;
+          color: #bb6fedff;
           margin: 0;
         }
 
@@ -354,8 +355,8 @@ const About = () => {
           background-color: #E6E6FA;
         }
         [data-theme="light"] .hero-section {
-          background: linear-gradient(rgba(75, 0, 130, 0.8), rgba(75, 0, 130, 0.8)),
-                      url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1200') center/cover;
+      
+                      url(${bg}) center/cover;    //about us background
         }
         [data-theme="light"] .about-section {
           background: white;
@@ -489,7 +490,7 @@ const About = () => {
                 </div>
               ))}
               
-              <button className="cta-button">Get Started</button>
+              {/* <button className="cta-button">Get Started</button> */}
             </div>
           </div>
         </div>
