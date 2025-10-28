@@ -75,11 +75,13 @@ function AppContent() {
       <Route
         path="/home"
         element={
-          <UserLayout>
+          
             <ProtectedRoute>
+              <UserLayout>
               <Home />
+              </UserLayout>
             </ProtectedRoute>
-          </UserLayout>
+          
         }
       />
 
