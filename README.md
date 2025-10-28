@@ -1,7 +1,7 @@
 # 🧾 Sales Management System
 
 A full-stack Sales Management System built using **Laravel (backend)** and **React (frontend)**.  
-This system helps manage sales, products, customers, and reports efficiently with a modern user interface.
+This system helps manage sales, products and customers efficiently with a modern user interface.
 
 ---
 
@@ -47,6 +47,7 @@ npm install
 cd  Sales-management-system
 npm run dev
 ```
+
 ### 🧠 Tech Stack
 Frontend: React, Vite, Axios, Tailwind CSS
 Backend: Laravel, PHP, MySQL
