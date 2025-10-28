@@ -625,16 +625,16 @@
   vertical-align: middle;
   border: 1px solid var(--gray-200);
 }
-/* ------------------ Dark Mode Overrides ------------------ */
 [data-theme="dark"] {
-  --background-color: #1e1e1e;
-  --surface-color: #2f2d2d;
-  --text-color: #fcfcff;
-  --accent-bg: #7d7c7c;
-  --primary-color: #6800f0;
-  --gray-500: #7b6d6d;
-  --gray-700: #fff1f1;
-  --white: #f4f4f5;
+  --background-color: #0a0a0f;      /* deep navy-black */
+  --surface-color: #111118;         /* card and panel surfaces */
+  --text-color: #ffffff;            /* pure white text */
+  --accent-bg: #1e1e28;             /* hover/active areas */
+  --primary-color: #b48cff;         /* elegant soft purple */
+  --link-color: #c8a4ff;            /* lighter purple for links */
+  --gray-500: #bfbfbf;
+  --gray-700: #e4e4e7;
+  --white: #ffffff;
 
   --green-100: #14532d;
   --green-800: #22c55e;
@@ -642,34 +642,64 @@
   --red-800: #fca5a5;
 }
 
-/* Apply overrides to main areas */
+/* General dark background */
+[data-theme="dark"] body,
 [data-theme="dark"] .account-container,
 [data-theme="dark"] .main-content,
-[data-theme="dark"] .content-area,
-[data-theme="dark"] .sidebar,
+[data-theme="dark"] .content-area {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Cards and containers */
 [data-theme="dark"] .info-card,
+[data-theme="dark"] .sidebar,
 [data-theme="dark"] .modal-container {
   background-color: var(--surface-color);
   color: var(--text-color);
-  border-color: var(--accent-bg);
+  border: 1px solid #1f1f28;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-[data-theme="dark"] .status-success {
-  background-color: var(--green-100);
-  color: var(--green-800);
+/* Headings */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+  color: var(--text-color);
 }
 
-[data-theme="dark"] .status-error {
-  background-color: var(--red-100);
-  color: var(--red-800);
+/* Links */
+[data-theme="dark"] a {
+  color: var(--link-color);
 }
 
+[data-theme="dark"] a:hover {
+  color: #d8baff;
+  text-decoration: underline;
+}
+
+/* Buttons */
+[data-theme="dark"] button,
+[data-theme="dark"] .confirm-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+
+[data-theme="dark"] button:hover,
+[data-theme="dark"] .confirm-btn:hover {
+  background-color: #9a68ff;
+}
+
+/* Sidebar Nav */
 [data-theme="dark"] .sidebar-nav .nav-link {
   color: var(--gray-500);
 }
 
 [data-theme="dark"] .sidebar-nav .nav-link:hover {
   background-color: var(--accent-bg);
+  color: var(--white);
 }
 
 [data-theme="dark"] .nav-link-active {
@@ -677,22 +707,98 @@
   color: var(--white);
 }
 
+/* Inputs & Textareas */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+  background-color: #1a1a22;
+  border: 1px solid #333;
+  color: var(--white);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #9e9e9e;
+}
+
+/* Order status */
 [data-theme="dark"] .order-status.status-completed {
   background-color: #14532d;
-  color: #f4f4f5;
+  color: #eaffea;
 }
 
 [data-theme="dark"] .order-status.status-processing {
   background-color: #b45309;
-  color: #f4f4f5;
+  color: #fff9e6;
 }
 
 [data-theme="dark"] .order-status.status-cancelled {
   background-color: #991b1b;
-  color: #f4f4f5;
+  color: #ffe5e5;
 }
 
 [data-theme="dark"] .order-status.status-pending {
   background-color: #1e3a8a;
-  color: #f4f4f5;
+  color: #e6eaff;
+}
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] small,
+[data-theme="dark"] .info-text,
+[data-theme="dark"] .text-muted {
+  color: #e6e6e6 !important; /* clean bright white-gray */
+}
+
+/* Make special highlights (like "log in" link) pop */
+[data-theme="dark"] .highlight,
+[data-theme="dark"] a {
+  color: #c8a4ff !important; /* soft elegant purple */
+  font-weight: 500;
+}
+
+[data-theme="dark"] a:hover {
+  color: #d9b8ff !important;
+  text-decoration: underline;
+}
+[data-theme="dark"], 
+.dark {
+  color: #eaeaea; /* base text color */
+}
+
+/* Ensure headings and strong text stay bold and visible */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] strong {
+  color: #ffffff !important;
+}
+
+/* Fix faded or grey paragraphs and spans */
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] small,
+[data-theme="dark"] label,
+[data-theme="dark"] .info-text,
+[data-theme="dark"] .text-muted {
+  color: #e6e6e6 !important;
+}
+
+/* Highlight links and actions like 'log in' */
+[data-theme="dark"] a {
+  color: #c8a4ff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+[data-theme="dark"] a:hover {
+  color: #d9b8ff !important;
+  text-decoration: underline;
+}
+
+/* Optional: adjust placeholder text inside inputs */
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #b8b8b8 !important;
 }
